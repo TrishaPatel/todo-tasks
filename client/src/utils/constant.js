@@ -1,1 +1,1 @@
-const taskStatus = ["To-Do", "In-Progress", "Completed"];
+export const taskStatus = ["To-Do", "In-Progress", "Completed"];

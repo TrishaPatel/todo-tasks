@@ -7,24 +7,21 @@ import { TaskContext } from "../../context/taskContext.js";
 
 export default class CreateTask extends React.Component {
   static contextType = TaskContext;
-  state = { description: "", error: "" };
 
   render() {
-    const { description, error } = this.state;
+    const { description, error } = this.context.state;
     return (
       <Grid container direction="row" justify="center" alignItems="center">
-        <form onSubmit={this.context.addTask}>
+        <form onSubmit={e => this.context.addTask(e)}>
           <Grid item xs={12}>
             <TextField
-              error={error ? true : false}
-              helperText={error ? error : ""}
               id="task"
               label="Task Description"
               name="description"
+              multiline={false}
               value={description}
-              multiline="true"
-              rows="2"
-              onChange={e => this.handleChange(e)}
+              rows="1"
+              onChange={e => this.context.handleChange(e)}
             />
           </Grid>
         </form>

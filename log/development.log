@@ -1,0 +1,2085 @@
+  [1m[35m (320.4ms)[0m  [1m[35mCREATE DATABASE "todo_tasks_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (253.9ms)[0m  [1m[35mCREATE DATABASE "todo_tasks_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2730474571145434260)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodos (20200613172054)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "description" character varying, "string" character varying, "status" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200613172054"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-13 17:21:12.670166"], ["updated_at", "2020-06-13 17:21:12.670166"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2730474571145434260)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-06-13 11:52:28 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.1ms | Allocations: 471)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 2636)
+
+
+Started GET "/todos/" for 127.0.0.1 at 2020-06-13 11:52:35 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 1.7ms | Allocations: 1872)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:00:53 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.1ms | Allocations: 308)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 1613)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:01:32 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 185)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 748)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-06-13 12:01:32 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:01:48 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 269)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:02:27 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.5ms | Allocations: 308)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 1613)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:06:18 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 308)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 1613)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:07:23 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 308)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 1613)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:17:42 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 308)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 1613)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:17:51 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 185)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 748)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-06-13 12:17:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:17:56 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-13 12:19:23 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 262)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/trisha/.rvm/gems/ruby-2.6.5/bin/rake:23)
+Started GET "/" for 127.0.0.1 at 2020-06-13 13:34:11 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/trisha/.rvm/gems/ruby-2.6.5/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.1ms | Allocations: 308)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 1614)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 13:34:17 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"description"=>"weqweqwe", "authenticity_token"=>"", "todo"=>{"description"=>"weqweqwe"}}
+[31mUnpermitted parameters: :authenticity_token, :todo[0m
+Completed 422 Unprocessable Entity in 21ms (Views: 0.3ms | ActiveRecord: 7.8ms | Allocations: 5989)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 13:42:44 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"qweqweqwe", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qweqweqwe"], ["status", 0], ["created_at", "2020-06-13 19:42:45.007750"], ["updated_at", "2020-06-13 19:42:45.007750"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 6561)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 13:43:00 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"Preparation for Interview", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Preparation for Interview"], ["status", 0], ["created_at", "2020-06-13 19:43:00.843305"], ["updated_at", "2020-06-13 19:43:00.843305"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+Completed 201 Created in 13ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 2608)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 13:44:23 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"testing data", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "testing data"], ["status", 0], ["created_at", "2020-06-13 19:44:23.069959"], ["updated_at", "2020-06-13 19:44:23.069959"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+Completed 201 Created in 10ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 2607)
+
+
+Started GET "/api/faqs" for 127.0.0.1 at 2020-06-13 13:50:07 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/faqs"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/faqs" for 127.0.0.1 at 2020-06-13 13:50:17 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/faqs"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/faqs" for 127.0.0.1 at 2020-06-13 13:50:19 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/faqs"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/faqs" for 127.0.0.1 at 2020-06-13 13:50:26 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/faqs"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/faqs" for 127.0.0.1 at 2020-06-13 13:50:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/faqs"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/todos" for 127.0.0.1 at 2020-06-13 13:50:48 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/todos"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/todos" for 127.0.0.1 at 2020-06-13 13:51:20 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/todos"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:51:44 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 4.0ms | Allocations: 5819)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:52:26 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 18ms (Views: 3.5ms | ActiveRecord: 4.7ms | Allocations: 6550)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:55:41 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 2048)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:55:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 2046)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:56:29 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.6ms | Allocations: 6861)
+
+
+  
+NameError (uninitialized constant TodosController::TodoSerializer):
+  
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:56:59 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.8ms | Allocations: 6879)
+
+
+  
+NameError (uninitialized constant TodosController::TodoSerializer):
+  
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:57:19 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.8ms | Allocations: 6844)
+
+
+  
+NameError (uninitialized constant TodosController::TodoSerializer):
+  
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:57:38 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.73ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 6.5ms | Allocations: 15073)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:57:53 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (200.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (399.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.55ms)
+Completed 500 Internal Server Error in 2309ms (ActiveRecord: 1102.3ms | Allocations: 3898987)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/serializers/todo_serializer.rb:5:in `attributes'
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:58:21 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.6ms | Allocations: 5597)
+
+
+  
+SyntaxError (/home/trisha/trisha/todo-tasks/app/serializers/todo_serializer.rb:11: syntax error, unexpected end):
+  
+app/serializers/todo_serializer.rb:11: syntax error, unexpected end
+app/serializers/todo_serializer.rb:11: syntax error, unexpected end
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:58:58 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.3ms | Allocations: 5471)
+
+
+  
+SyntaxError (/home/trisha/trisha/todo-tasks/app/serializers/todo_serializer.rb:11: syntax error, unexpected end):
+  
+app/serializers/todo_serializer.rb:11: syntax error, unexpected end
+app/serializers/todo_serializer.rb:11: syntax error, unexpected end
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:59:15 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+  [1m[36mTodo Load (5.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.0ms)
+Completed 200 OK in 32ms (Views: 8.6ms | ActiveRecord: 9.5ms | Allocations: 6831)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 13:59:28 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/todos_controller.rb:6:in `p'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.7ms | Allocations: 6487)
+
+
+  
+NoMethodError (undefined method `to_i' for {:each_serializer=>TodoSerializer}:Hash
+Did you mean?  to_s
+               to_a
+               to_h):
+  
+app/controllers/concerns/response.rb:3:in `json_response'
+app/controllers/todos_controller.rb:7:in `index'
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:00:51 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 23ms (Views: 14.6ms | ActiveRecord: 7.0ms | Allocations: 5975)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:01:32 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 1317)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:02:22 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1317)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:02:31 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:02:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:02:50 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1317)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:02:58 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:03:21 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:03:23 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:03:30 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:03:45 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:04:01 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:04:06 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:05:07 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:05:23 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:05:50 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:06:02 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:06:14 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:06:37 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:11:30 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:11:35 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:12:01 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:13:41 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:14:04 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:14:21 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:14:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:15:03 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:15:13 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.42ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:15:33 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:15:44 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:15:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.99ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:16:09 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.42ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:16:50 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:20:00 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:20:28 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:20:55 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:21:18 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:22:15 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:22:19 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:22:38 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:22:40 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:22:46 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:23:12 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:23:33 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:24:16 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:24:19 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:24:43 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:25:03 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:25:12 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:25:48 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:26:05 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:26:25 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:26:35 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:26:39 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:26:42 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:27:18 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1316)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:27:20 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1316)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 14:27:30 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"tewting data", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "tewting data"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.9ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "tewting data"], ["status", 0], ["created_at", "2020-06-13 20:27:30.857923"], ["updated_at", "2020-06-13 20:27:30.857923"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 4.8ms | Allocations: 5925)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 14:27:33 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"erwerwe", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "erwerwe"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "erwerwe"], ["status", 0], ["created_at", "2020-06-13 20:27:33.152828"], ["updated_at", "2020-06-13 20:27:33.152828"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 16ms (Views: 1.3ms | ActiveRecord: 4.9ms | Allocations: 3841)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:28:11 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 1511)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 14:28:24 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"weqweqwe", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "weqweqwe"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "weqweqwe"], ["status", 0], ["created_at", "2020-06-13 20:28:24.744292"], ["updated_at", "2020-06-13 20:28:24.744292"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 12.0ms | Allocations: 3840)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:28:24 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1608)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 14:28:27 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"qewqewe", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "qewqewe"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qewqewe"], ["status", 0], ["created_at", "2020-06-13 20:28:27.483454"], ["updated_at", "2020-06-13 20:28:27.483454"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 200 OK in 42ms (Views: 0.7ms | ActiveRecord: 13.2ms | Allocations: 3845)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:28:27 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:29:05 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:29:37 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:29:43 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:30:45 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:31:22 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:31:54 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:32:29 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:32:35 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:32:39 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:32:48 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.43ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:32:56 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:33:15 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.17ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:33:42 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.06ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:34:16 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:34:31 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:34:57 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:35:24 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:36:54 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:37:32 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.68ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.1ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:37:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:38:16 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:38:58 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:39:16 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:39:24 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.94ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:39:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.49ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.9ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 14:40:04 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.22ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+

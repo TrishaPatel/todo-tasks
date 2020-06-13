@@ -30,7 +30,7 @@ export default class TaskColumn extends React.Component {
           {provided => (
             <TaskList ref={provided.innerRef} {...provided.droppableProps}>
               {taskDetail.map((task, index) => (
-                <Task key={task.id.toString()} index={index} task={task} />
+                <Task key={task.id} index={index} task={task} />
               ))}
             </TaskList>
           )}
