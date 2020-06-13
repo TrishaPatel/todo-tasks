@@ -14,28 +14,24 @@ const Container = styled.div`
 `;
 const Title = styled.h3`
   padding: 8px;
+  text-align: "center";
 `;
 const TaskList = styled.div`
   padding: 8px;
   flex-grow: 1;
 `;
 export default class TaskColumn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let taskDetail = this.props.tasks;
-    console.log(taskDetail);
     return (
       <Container>
+        <Title>{this.props.column.title}</Title>
         <Droppable droppableId={this.props.column.id}>
-          {(provided, snapshot) => (
+          {provided => (
             <TaskList ref={provided.innerRef} {...provided.droppableProps}>
               {taskDetail.map((task, index) => (
-                <Task key={task.id.toString()} index={index} />
+                <Task key={task.id.toString()} index={index} task={task} />
               ))}
-              {provided.placeholder}
             </TaskList>
           )}
         </Droppable>

@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import TodoTask from "./components/todoTask/listTask.js";
+import TodoTask from "./components/todoTask/listTask.jsx";
+import CreateTask from "./components/todoTask/createTask.jsx";
+import App from "./App.js";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodoTask />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

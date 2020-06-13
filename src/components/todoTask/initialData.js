@@ -1,13 +1,13 @@
 var taskStatus = {
   tasks: {
     "1": {
-      id: 1,
-      title: "Testing Application",
+      id: "1",
+      description: "Testing Application",
       status: 0
     },
     "2": {
-      id: 1,
-      title: "Testing Application",
+      id: "2",
+      description: "Testing Application Data",
       status: 0
     }
   },

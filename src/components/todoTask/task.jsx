@@ -10,30 +10,11 @@ const Container = styled.div`
   &:hover {
     background: #9c27b0;
     color: white;
+    cursor: pointer;
   }
   &:active {
     background: #9c27b0;
     color: white;
-  }
-  &.red {
-    border: 1px solid red;
-  }
-  &.notclickablegrey {
-    /* pointer-events: none !important; */
-    background: transparent;
-    color: black;
-  }
-  &.notclickablered {
-    /* pointer-events: none !important; */
-    background: transparent;
-    color: black;
-    border: 1px solid red;
-  }
-  & #btnpushlive {
-    pointer-events: all !important;
-  }
-  &.currentnode {
-    background: red;
   }
 `;
 
@@ -44,7 +25,7 @@ export default class Task extends React.Component {
 
   render() {
     return (
-      <Draggable index={this.props.index}>
+      <Draggable index={this.props.index} draggableId={this.props.task.id}>
         {(provided, snapshot) => {
           return (
             <Container
@@ -52,7 +33,7 @@ export default class Task extends React.Component {
               {...provided.dragHandleProps}
               ref={provided.innerRef}
             >
-              Testing
+              {this.props.task.description}
             </Container>
           );
         }}
