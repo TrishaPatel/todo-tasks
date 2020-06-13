@@ -24,9 +24,11 @@ export default class Task extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
-      <Draggable index={this.props.index} draggableId={this.props.key}>
+      <Draggable
+        index={this.props.index}
+        draggableId={this.props.task.id.toString()}
+      >
         {(provided, snapshot) => {
           return (
             <Container

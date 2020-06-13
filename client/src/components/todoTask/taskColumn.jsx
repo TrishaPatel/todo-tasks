@@ -22,16 +22,16 @@ const TaskList = styled.div`
 `;
 export default class TaskColumn extends React.Component {
   render() {
-    let taskDetail = this.props.tasks;
     return (
       <Container>
         <Title>{this.props.column.title}</Title>
         <Droppable droppableId={this.props.column.id}>
           {provided => (
             <TaskList ref={provided.innerRef} {...provided.droppableProps}>
-              {taskDetail.map((task, index) => (
-                <Task key={task.id} index={index} task={task} />
+              {this.props.tasks.map((task, index) => (
+                <Task key={task.id.toString()} index={index} task={task} />
               ))}
+              {provided.placeholder}
             </TaskList>
           )}
         </Droppable>

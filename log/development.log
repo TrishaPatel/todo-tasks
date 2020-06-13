@@ -2083,3 +2083,813 @@ Processing by TodosController#index as */*
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1705)
 
 
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 15:58:08 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (1.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 30ms (Views: 15.4ms | ActiveRecord: 9.8ms | Allocations: 7851)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 15:58:44 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1724)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 15:58:53 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.97ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1724)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 15:59:14 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1724)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:00:30 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1724)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:00:53 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:01:02 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:01:08 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:01:41 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:01:58 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1706)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:02:03 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.21ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:02:10 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1705)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:02:29 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1705)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 16:02:52 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"qwewqe", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "qwewqe"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (1.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qwewqe"], ["status", 0], ["created_at", "2020-06-13 22:02:52.596370"], ["updated_at", "2020-06-13 22:02:52.596370"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 5.1ms | Allocations: 5933)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:03:21 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1802)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:03:29 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1802)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 16:03:33 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"trisha", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "trisha"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "trisha"], ["status", 0], ["created_at", "2020-06-13 22:03:33.886555"], ["updated_at", "2020-06-13 22:03:33.886555"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 4.3ms | Allocations: 3841)
+
+
+Started POST "/todos" for 127.0.0.1 at 2020-06-13 16:03:37 -0600
+Processing by TodosController#create as JSON
+  Parameters: {"todo"=>{"description"=>"patel", "status"=>"0"}, "authenticity_token"=>""}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "patel"], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "patel"], ["status", 0], ["created_at", "2020-06-13 22:03:37.577572"], ["updated_at", "2020-06-13 22:03:37.577572"]]
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:12:in `create'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 12.3ms | Allocations: 3840)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:03:57 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.42ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:06:02 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:06:53 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:07:43 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:07:55 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.53ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:08:02 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:08:40 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:09:01 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:09:04 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:09:13 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.44ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:10:02 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:10:08 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:13:52 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:14:34 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:14:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:14:51 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.87ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:14:59 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:15:35 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:16:04 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.78ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:18:00 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:18:13 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:18:17 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:18:30 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:28:12 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 2072)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:28:41 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:28:50 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:29:19 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.64ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:29:21 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.23ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:29:31 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:29:52 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:30:01 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:30:04 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:30:27 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:30:56 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.05ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:31:14 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:32:12 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:32:25 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:32:51 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:35:48 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:36:46 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.31ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:37:27 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:37:49 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:38:06 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:38:18 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:39:42 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:39:47 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:40:18 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:40:54 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:41:09 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started POST "/todos/2" for 127.0.0.1 at 2020-06-13 16:41:13 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/todos/2"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/trisha/.rvm/gems/ruby-2.6.5/bin/rake:23)
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:41:37 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1995)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:41:44 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.13ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 1996)
+
+
+Started PUT "/todos/2" for 127.0.0.1 at 2020-06-13 16:41:47 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"1"}, "authenticity_token"=>"", "id"=>"2"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "Preparation for Interview"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.7ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 1], ["updated_at", "2020-06-13 22:41:47.830037"], ["id", 2]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 204 No Content in 20ms (ActiveRecord: 8.2ms | Allocations: 4437)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:42:17 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started PUT "/todos/3" for 127.0.0.1 at 2020-06-13 16:42:20 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"2"}, "authenticity_token"=>"", "id"=>"3"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "testing data"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.8ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 2], ["updated_at", "2020-06-13 22:42:20.916189"], ["id", 3]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 204 No Content in 17ms (ActiveRecord: 4.6ms | Allocations: 4295)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:42:58 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.63ms)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 4.0ms | Allocations: 6735)
+
+
+Started PUT "/todos/6" for 127.0.0.1 at 2020-06-13 16:43:01 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"1"}, "authenticity_token"=>"", "id"=>"6"}
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "weqweqwe"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.7ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 1], ["updated_at", "2020-06-13 22:43:02.013841"], ["id", 6]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (3.29ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.4ms | Allocations: 5551)
+
+
+  
+NoMethodError (undefined method `model_name' for NilClass:Class
+Did you mean?  module_parent):
+  
+app/controllers/concerns/response.rb:3:in `json_response'
+app/controllers/todos_controller.rb:24:in `update'
+Started PUT "/todos/5" for 127.0.0.1 at 2020-06-13 16:43:26 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"1"}, "authenticity_token"=>"", "id"=>"5"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "erwerwe"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.2ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 1], ["updated_at", "2020-06-13 22:43:26.481241"], ["id", 5]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 200 OK in 15ms (ActiveRecord: 5.1ms | Allocations: 8568)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:43:48 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.42ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 3639)
+
+
+Started PUT "/todos/5" for 127.0.0.1 at 2020-06-13 16:44:00 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"2"}, "authenticity_token"=>"", "id"=>"5"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "erwerwe"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.6ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 2], ["updated_at", "2020-06-13 22:44:00.317887"], ["id", 5]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 200 OK in 17ms (ActiveRecord: 3.8ms | Allocations: 4324)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:44:53 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started PUT "/todos/6" for 127.0.0.1 at 2020-06-13 16:44:59 -0600
+Processing by TodosController#update as JSON
+  Parameters: {"todo"=>{"status"=>"2"}, "authenticity_token"=>"", "id"=>"6"}
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "weqweqwe"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.5ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 2], ["updated_at", "2020-06-13 22:44:59.174584"], ["id", 6]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 200 OK in 19ms (ActiveRecord: 3.7ms | Allocations: 4323)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:45:59 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1996)
+
+
+Started PUT "/todos/6" for 127.0.0.1 at 2020-06-13 16:46:04 -0600
+Processing by TodosController#update as */*
+  Parameters: {"todo"=>{"status"=>"1"}, "authenticity_token"=>"", "id"=>"6"}
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:41:in `set_todo'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "weqweqwe"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.6ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 1], ["updated_at", "2020-06-13 22:46:04.254220"], ["id", 6]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+Completed 200 OK in 18ms (ActiveRecord: 4.2ms | Allocations: 4325)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:47:05 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 4.3ms | Allocations: 6623)
+
+
+Started PUT "/todos/5" for 127.0.0.1 at 2020-06-13 16:47:08 -0600
+Processing by TodosController#update as */*
+  Parameters: {"todo"=>{"status"=>"1"}, "authenticity_token"=>"", "id"=>"5"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:42:in `set_todo'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "erwerwe"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[36mTodo Update (0.9ms)[0m  [1m[33mUPDATE "todos" SET "status" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["status", 1], ["updated_at", "2020-06-13 22:47:08.701619"], ["id", 5]]
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:23:in `update'
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 4.5ms | Allocations: 4763)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:47:17 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.23ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:47:20 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1996)
+
+
+Started GET "/todos" for 127.0.0.1 at 2020-06-13 16:47:22 -0600
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/concerns/response.rb:3:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1996)
+
+

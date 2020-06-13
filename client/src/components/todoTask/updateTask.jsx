@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import taskDetail from "./initialData.js";
 import { TaskContext } from "../../context/taskContext.js";
 
-export default class CreateTask extends React.Component {
+export default class UpdateTask extends React.Component {
   static contextType = TaskContext;
 
   render() {
@@ -14,7 +14,7 @@ export default class CreateTask extends React.Component {
       <Grid container direction="row" justify="center" alignItems="center">
         <form onSubmit={e => this.context.addTask(e)}>
           <Grid item xs={12}>
-            Create
+            Update
             <TextField
               id="task"
               label="Task Description"

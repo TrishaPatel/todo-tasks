@@ -21,7 +21,8 @@ class TodosController < ApplicationController
   # PUT /todos/:id
   def update
     @todo.update(todo_params)
-    head :no_content
+    json_response(@todo,TodoSerializer)
+
   end
 
   # DELETE /todos/:id
