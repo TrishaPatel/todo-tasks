@@ -1,20 +1,31 @@
 var taskStatus = {
-  titles: {},
+  tasks: {
+    "1": {
+      id: 1,
+      title: "Testing Application",
+      status: 0
+    },
+    "2": {
+      id: 1,
+      title: "Testing Application",
+      status: 0
+    }
+  },
   columns: {
     "To-Do": {
       id: "To-Do",
       title: "To-Do",
-      titleIds: []
+      taskIds: ["1", "2"]
     },
     "In-Progress": {
       id: "In-Progress",
       title: "In-Progress",
-      titleIds: []
+      taskIds: []
     },
     Completed: {
       id: "Completed",
       title: "Completed",
-      titleIds: []
+      taskIds: []
     }
   },
   columnsort: ["To-Do", "In-Progress", "Completed"]
