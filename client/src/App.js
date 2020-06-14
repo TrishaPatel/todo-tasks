@@ -8,9 +8,11 @@ import ShowTask from "./components/todoTask/showTask.jsx";
 import styled from "styled-components";
 const primary = blue[900]; // #F44336
 const Header = styled.div`
-  padding: 15px;
-  text-lign: center;
-  color: blue;
+  padding: 15px 0px;
+  color: white;
+  font-size: 24px;
+  background: #931078;
+  width: 100%;
 `;
 function App() {
   return (

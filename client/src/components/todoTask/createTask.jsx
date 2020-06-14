@@ -1,32 +1,48 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+import { TextField, Grid, Button, InputLabel } from "@material-ui/core";
 import taskDetail from "./initialData.js";
 import { TaskContext } from "../../context/taskContext.js";
+import styled from "styled-components";
 
+const Container = styled.div`
+  padding: 8px;
+  margin-bottom: 8px;
+  width: 800px;
+  display: flex;
+`;
+const H4 = styled.div`
+  font-size: 20px;
+  color: #931078;
+`;
 export default class CreateTask extends React.Component {
   static contextType = TaskContext;
 
   render() {
     const { description, error } = this.context.state;
     return (
-      <Grid container direction="row" justify="center" alignItems="center">
-        <form onSubmit={e => this.context.addTask(e)}>
-          <Grid item xs={12}>
-            Create
-            <TextField
-              id="task"
-              label="Task Description"
-              name="description"
-              multiline={false}
-              value={description}
-              rows="1"
-              onChange={e => this.context.handleChange(e)}
-            />
+      <form onSubmit={e => this.context.addTask(e)}>
+        <Container>
+          <Grid container>
+            <Grid item xs={12}>
+              <H4> Create Task </H4>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="description"
+                error={this.context.state.error["description"]}
+                label="Task Description"
+                name="description"
+                multiline={false}
+                value={description}
+                helperText={this.context.state.error["message"]}
+                fullWidth
+                rows="1"
+                onChange={e => this.context.handleChange(e)}
+              />
+            </Grid>
           </Grid>
-        </form>
-      </Grid>
+        </Container>
+      </form>
     );
   }
 }

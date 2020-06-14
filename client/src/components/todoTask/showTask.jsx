@@ -17,7 +17,8 @@ export default class ShowTask extends React.Component {
     status: getKeyByValue(taskStatus, "To-Do"),
     error: {},
     isLoading: false,
-    newRecord: true
+    newRecord: true,
+    id: ""
   };
   componentDidMount() {
     this.fetchTodos();
@@ -26,12 +27,17 @@ export default class ShowTask extends React.Component {
     let taskId = taskValue.id.toString();
     let taskDetail = this.state.taskDetail;
     taskDetail.tasks[taskId] = taskValue;
-    taskDetail.columns[
+    let taskIdIndex = taskDetail.columns[
       getValueByKey(taskStatus, taskValue.status)
-    ].taskIds.push(taskValue.id);
+    ].taskIds.findIndex(task => task == taskValue.id);
+    if (taskIdIndex == -1) {
+      taskDetail.columns[
+        getValueByKey(taskStatus, taskValue.status)
+      ].taskIds.push(taskValue.id);
+    }
     return taskDetail;
   };
-  fetchTodos() {
+  fetchTodos = () => {
     fetch("/todos")
       .then(response => response.json())
       .then(todos => {
@@ -39,9 +45,9 @@ export default class ShowTask extends React.Component {
         todos.map((value, key) => {
           taskDetail = this.createTaskObject(value);
         });
-        this.setState({ taskDetail: taskDetail, isLoading: true });
+        this.setState({ ...taskDetail, isLoading: true });
       });
-  }
+  };
   addTask = event => {
     event.preventDefault();
     try {
@@ -61,6 +67,7 @@ export default class ShowTask extends React.Component {
         }
       })
         .then(response => {
+          console.log(response);
           if (!response.ok) {
             throw response;
           }
@@ -71,7 +78,8 @@ export default class ShowTask extends React.Component {
           this.setState({
             description: "",
             status: getKeyByValue(taskStatus, "To-Do"),
-            taskDetail: taskDetail
+            taskDetail: taskDetail,
+            error: {}
           });
         })
         .catch(error => {
@@ -81,7 +89,7 @@ export default class ShowTask extends React.Component {
             let errorList = Object.entries(JSON.parse(errorMessage));
             errorList.forEach(([key, value]) => {
               errorState[key] = true;
-              if (errorState["message"] == "") {
+              if (errorState["message"] === "") {
                 errorState["message"] = value[0];
               }
             });
@@ -89,20 +97,87 @@ export default class ShowTask extends React.Component {
           });
         });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
-
+  editTask = taskid => {
+    fetch(`/todos/${taskid}`)
+      .then(response => response.json())
+      .then(todos => {
+        this.setState({
+          description: todos.description,
+          id: taskid,
+          newRecord: false
+        });
+      });
+  };
+  updateTask = event => {
+    event.preventDefault();
+    var taskData = {
+      todo: {
+        description: this.state.description
+      },
+      authenticity_token: getMetaContent("csrf-token")
+    };
+    fetch(`/todos/${this.state.id}`, {
+      method: "put",
+      body: JSON.stringify(taskData),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json(); //we only get here if there is no error
+      })
+      .then(response => {
+        let taskDetail = this.createTaskObject(response);
+        this.setState({
+          description: "",
+          status: getKeyByValue(taskStatus, "To-Do"),
+          taskDetail,
+          newRecord: true,
+          error: {}
+        });
+      })
+      .catch(error => {
+        let errorState = {};
+        errorState["message"] = "";
+        error.text().then(errorMessage => {
+          let errorList = Object.entries(JSON.parse(errorMessage));
+          errorList.forEach(([key, value]) => {
+            errorState[key] = true;
+            if (errorState["message"] == "") {
+              errorState["message"] = value[0];
+            }
+          });
+          this.setState({ error: errorState });
+        });
+      });
+  };
+  deleteTask = (taskId, event) => {
+    event.stopPropagation();
+    fetch(`/todos/${taskId}`, { method: "delete" }).then(response => {
+      let taskDetail = this.state.taskDetail;
+      let deletedTaskStatus = taskDetail.tasks[taskId].status;
+      let taskIds =
+        taskDetail.columns[getValueByKey(taskStatus, deletedTaskStatus)]
+          .taskIds;
+      let newTaskIds;
+      newTaskIds = taskIds.filter(id => {
+        return id != taskId;
+      });
+      delete taskDetail.tasks[taskId];
+      taskDetail.columns[
+        getValueByKey(taskStatus, deletedTaskStatus)
+      ].taskIds = newTaskIds;
+      this.setState({ ...taskDetail });
+    });
+  };
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onDragUpdate = update => {
-    const { destination } = update;
-    const opacity = destination
-      ? destination.index / Object.keys(this.state.taskDetail).length
-      : 0;
-  };
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
     if (!destination) {
@@ -154,6 +229,10 @@ export default class ShowTask extends React.Component {
         [newFinish.id]: newFinish
       }
     };
+    newState.tasks[draggableId].status = getKeyByValue(
+      taskStatus,
+      destination.droppableId
+    );
     try {
       var taskData = {
         todo: {
@@ -173,6 +252,7 @@ export default class ShowTask extends React.Component {
           return response.json(); //we only get here if there is no error
         })
         .then(response => {
+          // this.fetchTodos();
           this.setState({ taskDetail: newState });
         })
         .catch(error => {
@@ -189,12 +269,11 @@ export default class ShowTask extends React.Component {
             this.setState({ error: errorState });
           });
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   render() {
-    const { isLoading, newRecord } = this.state;
+    const { isLoading, id, newRecord, error } = this.state;
+    console.log(error);
     if (isLoading) {
       return (
         <TaskContext.Provider
@@ -203,10 +282,12 @@ export default class ShowTask extends React.Component {
             addTask: this.addTask,
             handleChange: this.handleChange,
             onDragEnd: this.onDragEnd,
-            onDragUpdate: this.onDragUpdate
+            editTask: this.editTask,
+            updateTask: this.updateTask,
+            deleteTask: this.deleteTask
           }}
         >
-          {newRecord === true ? <CreateTask /> : <UpdateTask />}
+          {newRecord === true ? <CreateTask /> : <UpdateTask id={id} />}
           <TodoTask />
         </TaskContext.Provider>
       );
