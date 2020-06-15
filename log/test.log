@@ -4035,3 +4035,942 @@ Processing by TodosController#destroy as HTML
   [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 204 No Content in 1ms (ActiveRecord: 0.3ms | Allocations: 393)
   [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "todos" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (5.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'todo_tasks_api_test'[0m
+  [1m[35m (10.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."todos" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "todos" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodo Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE "todos"."description" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "impedit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "impedit"], ["status", 0], ["created_at", "2020-06-14 17:16:05.200268"], ["updated_at", "2020-06-14 17:16:05.200268"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "explicabo"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "explicabo"], ["status", 0], ["created_at", "2020-06-14 17:16:05.201990"], ["updated_at", "2020-06-14 17:16:05.201990"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.203700"], ["updated_at", "2020-06-14 17:16:05.203700"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nobis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nobis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.205119"], ["updated_at", "2020-06-14 17:16:05.205119"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "vitae"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "vitae"], ["status", 0], ["created_at", "2020-06-14 17:16:05.206577"], ["updated_at", "2020-06-14 17:16:05.206577"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quo"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quo"], ["status", 0], ["created_at", "2020-06-14 17:16:05.208082"], ["updated_at", "2020-06-14 17:16:05.208082"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "autem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "autem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.209816"], ["updated_at", "2020-06-14 17:16:05.209816"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ad"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ad"], ["status", 0], ["created_at", "2020-06-14 17:16:05.211412"], ["updated_at", "2020-06-14 17:16:05.211412"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nisi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nisi"], ["status", 0], ["created_at", "2020-06-14 17:16:05.212881"], ["updated_at", "2020-06-14 17:16:05.212881"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "laborum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "laborum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.214115"], ["updated_at", "2020-06-14 17:16:05.214115"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2603)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "placeat"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "placeat"], ["status", 0], ["created_at", "2020-06-14 17:16:05.225434"], ["updated_at", "2020-06-14 17:16:05.225434"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "voluptas"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "voluptas"], ["status", 0], ["created_at", "2020-06-14 17:16:05.227103"], ["updated_at", "2020-06-14 17:16:05.227103"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "dolore"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "dolore"], ["status", 0], ["created_at", "2020-06-14 17:16:05.230953"], ["updated_at", "2020-06-14 17:16:05.230953"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "placeat"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "et"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "et"], ["status", 0], ["created_at", "2020-06-14 17:16:05.239352"], ["updated_at", "2020-06-14 17:16:05.239352"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "aspernatur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "aspernatur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.241402"], ["updated_at", "2020-06-14 17:16:05.241402"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "autem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "autem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.243573"], ["updated_at", "2020-06-14 17:16:05.243573"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "qui"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qui"], ["status", 0], ["created_at", "2020-06-14 17:16:05.245200"], ["updated_at", "2020-06-14 17:16:05.245200"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nesciunt"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nesciunt"], ["status", 0], ["created_at", "2020-06-14 17:16:05.246797"], ["updated_at", "2020-06-14 17:16:05.246797"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consectetur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consectetur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.248363"], ["updated_at", "2020-06-14 17:16:05.248363"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "error"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "error"], ["status", 0], ["created_at", "2020-06-14 17:16:05.250216"], ["updated_at", "2020-06-14 17:16:05.250216"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "aut"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "aut"], ["status", 0], ["created_at", "2020-06-14 17:16:05.251642"], ["updated_at", "2020-06-14 17:16:05.251642"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "autem"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consequatur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consequatur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.255614"], ["updated_at", "2020-06-14 17:16:05.255614"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quia"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quia"], ["status", 0], ["created_at", "2020-06-14 17:16:05.257132"], ["updated_at", "2020-06-14 17:16:05.257132"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "est"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "est"], ["status", 0], ["created_at", "2020-06-14 17:16:05.259054"], ["updated_at", "2020-06-14 17:16:05.259054"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "rerum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "rerum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.260942"], ["updated_at", "2020-06-14 17:16:05.260942"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "totam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "totam"], ["status", 0], ["created_at", "2020-06-14 17:16:05.262871"], ["updated_at", "2020-06-14 17:16:05.262871"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "occaecati"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "occaecati"], ["status", 0], ["created_at", "2020-06-14 17:16:05.264359"], ["updated_at", "2020-06-14 17:16:05.264359"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "optio"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "optio"], ["status", 0], ["created_at", "2020-06-14 17:16:05.265935"], ["updated_at", "2020-06-14 17:16:05.265935"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consequatur"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ipsam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ipsam"], ["status", 0], ["created_at", "2020-06-14 17:16:05.269732"], ["updated_at", "2020-06-14 17:16:05.269732"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quisquam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quisquam"], ["status", 0], ["created_at", "2020-06-14 17:16:05.271092"], ["updated_at", "2020-06-14 17:16:05.271092"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "exercitationem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "exercitationem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.272420"], ["updated_at", "2020-06-14 17:16:05.272420"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consequuntur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consequuntur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.273671"], ["updated_at", "2020-06-14 17:16:05.273671"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "eum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "eum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.275280"], ["updated_at", "2020-06-14 17:16:05.275280"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "excepturi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "excepturi"], ["status", 0], ["created_at", "2020-06-14 17:16:05.276688"], ["updated_at", "2020-06-14 17:16:05.276688"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "a"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "a"], ["status", 0], ["created_at", "2020-06-14 17:16:05.278039"], ["updated_at", "2020-06-14 17:16:05.278039"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quia"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quia"], ["status", 0], ["created_at", "2020-06-14 17:16:05.279324"], ["updated_at", "2020-06-14 17:16:05.279324"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "rerum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "rerum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.280734"], ["updated_at", "2020-06-14 17:16:05.280734"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "voluptate"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "voluptate"], ["status", 0], ["created_at", "2020-06-14 17:16:05.282252"], ["updated_at", "2020-06-14 17:16:05.282252"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 830)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "placeat"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "placeat"], ["status", 0], ["created_at", "2020-06-14 17:16:05.288449"], ["updated_at", "2020-06-14 17:16:05.288449"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "voluptate"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "voluptate"], ["status", 0], ["created_at", "2020-06-14 17:16:05.289829"], ["updated_at", "2020-06-14 17:16:05.289829"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "exercitationem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "exercitationem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.291314"], ["updated_at", "2020-06-14 17:16:05.291314"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "voluptatum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "voluptatum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.292806"], ["updated_at", "2020-06-14 17:16:05.292806"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "maiores"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "maiores"], ["status", 0], ["created_at", "2020-06-14 17:16:05.294200"], ["updated_at", "2020-06-14 17:16:05.294200"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "rerum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "rerum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.295593"], ["updated_at", "2020-06-14 17:16:05.295593"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "reprehenderit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "reprehenderit"], ["status", 0], ["created_at", "2020-06-14 17:16:05.296782"], ["updated_at", "2020-06-14 17:16:05.296782"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "praesentium"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "praesentium"], ["status", 0], ["created_at", "2020-06-14 17:16:05.297962"], ["updated_at", "2020-06-14 17:16:05.297962"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ut"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ut"], ["status", 0], ["created_at", "2020-06-14 17:16:05.299126"], ["updated_at", "2020-06-14 17:16:05.299126"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "autem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "autem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.300220"], ["updated_at", "2020-06-14 17:16:05.300220"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 296)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "iste"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "iste"], ["status", 0], ["created_at", "2020-06-14 17:16:05.305150"], ["updated_at", "2020-06-14 17:16:05.305150"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nesciunt"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nesciunt"], ["status", 0], ["created_at", "2020-06-14 17:16:05.306335"], ["updated_at", "2020-06-14 17:16:05.306335"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "atque"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "atque"], ["status", 0], ["created_at", "2020-06-14 17:16:05.307600"], ["updated_at", "2020-06-14 17:16:05.307600"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "dolor"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "dolor"], ["status", 0], ["created_at", "2020-06-14 17:16:05.309137"], ["updated_at", "2020-06-14 17:16:05.309137"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "facilis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "facilis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.310312"], ["updated_at", "2020-06-14 17:16:05.310312"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "expedita"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "expedita"], ["status", 0], ["created_at", "2020-06-14 17:16:05.311565"], ["updated_at", "2020-06-14 17:16:05.311565"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "qui"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qui"], ["status", 0], ["created_at", "2020-06-14 17:16:05.312924"], ["updated_at", "2020-06-14 17:16:05.312924"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minima"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minima"], ["status", 0], ["created_at", "2020-06-14 17:16:05.314073"], ["updated_at", "2020-06-14 17:16:05.314073"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "eaque"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "eaque"], ["status", 0], ["created_at", "2020-06-14 17:16:05.315084"], ["updated_at", "2020-06-14 17:16:05.315084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "fugiat"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "fugiat"], ["status", 0], ["created_at", "2020-06-14 17:16:05.316065"], ["updated_at", "2020-06-14 17:16:05.316065"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"description"=>"Learn Elm", "status"=>"0"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 187)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "aliquam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "aliquam"], ["status", 0], ["created_at", "2020-06-14 17:16:05.322025"], ["updated_at", "2020-06-14 17:16:05.322025"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consequuntur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consequuntur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.323304"], ["updated_at", "2020-06-14 17:16:05.323304"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quisquam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quisquam"], ["status", 0], ["created_at", "2020-06-14 17:16:05.324692"], ["updated_at", "2020-06-14 17:16:05.324692"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sed"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "sed"], ["status", 0], ["created_at", "2020-06-14 17:16:05.326156"], ["updated_at", "2020-06-14 17:16:05.326156"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ex"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ex"], ["status", 0], ["created_at", "2020-06-14 17:16:05.327593"], ["updated_at", "2020-06-14 17:16:05.327593"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.328934"], ["updated_at", "2020-06-14 17:16:05.328934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "fuga"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "fuga"], ["status", 0], ["created_at", "2020-06-14 17:16:05.330188"], ["updated_at", "2020-06-14 17:16:05.330188"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "culpa"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "culpa"], ["status", 0], ["created_at", "2020-06-14 17:16:05.331441"], ["updated_at", "2020-06-14 17:16:05.331441"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "enim"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "enim"], ["status", 0], ["created_at", "2020-06-14 17:16:05.332556"], ["updated_at", "2020-06-14 17:16:05.332556"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "labore"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "labore"], ["status", 0], ["created_at", "2020-06-14 17:16:05.333701"], ["updated_at", "2020-06-14 17:16:05.333701"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"description"=>"Learn Elm", "status"=>"0"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 184)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ea"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ea"], ["status", 0], ["created_at", "2020-06-14 17:16:05.337867"], ["updated_at", "2020-06-14 17:16:05.337867"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "voluptatibus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "voluptatibus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.339022"], ["updated_at", "2020-06-14 17:16:05.339022"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "distinctio"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "distinctio"], ["status", 0], ["created_at", "2020-06-14 17:16:05.340115"], ["updated_at", "2020-06-14 17:16:05.340115"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "natus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "natus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.341371"], ["updated_at", "2020-06-14 17:16:05.341371"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quia"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quia"], ["status", 0], ["created_at", "2020-06-14 17:16:05.342745"], ["updated_at", "2020-06-14 17:16:05.342745"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sequi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "sequi"], ["status", 0], ["created_at", "2020-06-14 17:16:05.344092"], ["updated_at", "2020-06-14 17:16:05.344092"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "et"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "et"], ["status", 0], ["created_at", "2020-06-14 17:16:05.345220"], ["updated_at", "2020-06-14 17:16:05.345220"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "perspiciatis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "perspiciatis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.346293"], ["updated_at", "2020-06-14 17:16:05.346293"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nobis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nobis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.347244"], ["updated_at", "2020-06-14 17:16:05.347244"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "eveniet"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "eveniet"], ["status", 0], ["created_at", "2020-06-14 17:16:05.348205"], ["updated_at", "2020-06-14 17:16:05.348205"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"description"=>"Foobar"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 183)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sint"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "sint"], ["status", 0], ["created_at", "2020-06-14 17:16:05.352043"], ["updated_at", "2020-06-14 17:16:05.352043"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "rerum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "rerum"], ["status", 0], ["created_at", "2020-06-14 17:16:05.353046"], ["updated_at", "2020-06-14 17:16:05.353046"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "aliquid"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "aliquid"], ["status", 0], ["created_at", "2020-06-14 17:16:05.354047"], ["updated_at", "2020-06-14 17:16:05.354047"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nulla"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nulla"], ["status", 0], ["created_at", "2020-06-14 17:16:05.355047"], ["updated_at", "2020-06-14 17:16:05.355047"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "est"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "est"], ["status", 0], ["created_at", "2020-06-14 17:16:05.356012"], ["updated_at", "2020-06-14 17:16:05.356012"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "alias"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "alias"], ["status", 0], ["created_at", "2020-06-14 17:16:05.356942"], ["updated_at", "2020-06-14 17:16:05.356942"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sint"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "doloribus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "doloribus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.360255"], ["updated_at", "2020-06-14 17:16:05.360255"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ut"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ut"], ["status", 0], ["created_at", "2020-06-14 17:16:05.361502"], ["updated_at", "2020-06-14 17:16:05.361502"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "velit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "velit"], ["status", 0], ["created_at", "2020-06-14 17:16:05.362561"], ["updated_at", "2020-06-14 17:16:05.362561"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ex"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ex"], ["status", 0], ["created_at", "2020-06-14 17:16:05.363532"], ["updated_at", "2020-06-14 17:16:05.363532"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quia"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quia"], ["status", 0], ["created_at", "2020-06-14 17:16:05.364483"], ["updated_at", "2020-06-14 17:16:05.364483"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "impedit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "impedit"], ["status", 0], ["created_at", "2020-06-14 17:16:05.365445"], ["updated_at", "2020-06-14 17:16:05.365445"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "necessitatibus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "necessitatibus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.366381"], ["updated_at", "2020-06-14 17:16:05.366381"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "qui"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "qui"], ["status", 0], ["created_at", "2020-06-14 17:16:05.367317"], ["updated_at", "2020-06-14 17:16:05.367317"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "labore"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "labore"], ["status", 0], ["created_at", "2020-06-14 17:16:05.368251"], ["updated_at", "2020-06-14 17:16:05.368251"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "facilis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "facilis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.369173"], ["updated_at", "2020-06-14 17:16:05.369173"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/85" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"85"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.1ms | Allocations: 313)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ipsa"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ipsa"], ["status", 0], ["created_at", "2020-06-14 17:16:05.373366"], ["updated_at", "2020-06-14 17:16:05.373366"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "perferendis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "perferendis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.374887"], ["updated_at", "2020-06-14 17:16:05.374887"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "necessitatibus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "necessitatibus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.376161"], ["updated_at", "2020-06-14 17:16:05.376161"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "vel"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "vel"], ["status", 0], ["created_at", "2020-06-14 17:16:05.377212"], ["updated_at", "2020-06-14 17:16:05.377212"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "a"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "a"], ["status", 0], ["created_at", "2020-06-14 17:16:05.378296"], ["updated_at", "2020-06-14 17:16:05.378296"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "dolorem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "dolorem"], ["status", 0], ["created_at", "2020-06-14 17:16:05.379365"], ["updated_at", "2020-06-14 17:16:05.379365"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "labore"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "labore"], ["status", 0], ["created_at", "2020-06-14 17:16:05.380360"], ["updated_at", "2020-06-14 17:16:05.380360"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nobis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nobis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.381361"], ["updated_at", "2020-06-14 17:16:05.381361"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "et"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "et"], ["status", 0], ["created_at", "2020-06-14 17:16:05.382338"], ["updated_at", "2020-06-14 17:16:05.382338"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nesciunt"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nesciunt"], ["status", 0], ["created_at", "2020-06-14 17:16:05.383301"], ["updated_at", "2020-06-14 17:16:05.383301"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/95" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"95"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 95], ["LIMIT", 1]]
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.1ms | Allocations: 313)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "debitis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "debitis"], ["status", 0], ["created_at", "2020-06-14 17:16:05.387699"], ["updated_at", "2020-06-14 17:16:05.387699"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minima"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minima"], ["status", 0], ["created_at", "2020-06-14 17:16:05.388900"], ["updated_at", "2020-06-14 17:16:05.388900"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "est"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "est"], ["status", 0], ["created_at", "2020-06-14 17:16:05.390015"], ["updated_at", "2020-06-14 17:16:05.390015"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "temporibus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "temporibus"], ["status", 0], ["created_at", "2020-06-14 17:16:05.391284"], ["updated_at", "2020-06-14 17:16:05.391284"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quae"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quae"], ["status", 0], ["created_at", "2020-06-14 17:16:05.392658"], ["updated_at", "2020-06-14 17:16:05.392658"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consequatur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consequatur"], ["status", 0], ["created_at", "2020-06-14 17:16:05.393876"], ["updated_at", "2020-06-14 17:16:05.393876"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "recusandae"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "recusandae"], ["status", 0], ["created_at", "2020-06-14 17:16:05.395061"], ["updated_at", "2020-06-14 17:16:05.395061"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "praesentium"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "praesentium"], ["status", 0], ["created_at", "2020-06-14 17:16:05.396152"], ["updated_at", "2020-06-14 17:16:05.396152"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nihil"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nihil"], ["status", 0], ["created_at", "2020-06-14 17:16:05.397225"], ["updated_at", "2020-06-14 17:16:05.397225"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "quasi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "quasi"], ["status", 0], ["created_at", "2020-06-14 17:16:05.398323"], ["updated_at", "2020-06-14 17:16:05.398323"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/todos/105" for 127.0.0.1 at 2020-06-14 11:16:05 -0600
+Processing by TodosController#destroy as HTML
+  Parameters: {"id"=>"105"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 105], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Destroy (0.1ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 105]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.4ms | Allocations: 396)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "todos" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'todo_tasks_api_test'[0m
+  [1m[35m (7.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."todos" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "todos" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodo Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE "todos"."description" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "autem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "autem"], ["status", 0], ["created_at", "2020-06-14 17:17:23.427372"], ["updated_at", "2020-06-14 17:17:23.427372"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1728)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minima"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minima"], ["status", 0], ["created_at", "2020-06-14 17:17:23.439523"], ["updated_at", "2020-06-14 17:17:23.439523"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 386)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "nihil"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "nihil"], ["status", 0], ["created_at", "2020-06-14 17:17:23.445490"], ["updated_at", "2020-06-14 17:17:23.445490"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/3" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 585)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "totam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "totam"], ["status", 0], ["created_at", "2020-06-14 17:17:23.452303"], ["updated_at", "2020-06-14 17:17:23.452303"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/4" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 376)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "perferendis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "perferendis"], ["status", 0], ["created_at", "2020-06-14 17:17:23.457941"], ["updated_at", "2020-06-14 17:17:23.457941"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 1ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 683)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "harum"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "harum"], ["status", 0], ["created_at", "2020-06-14 17:17:23.464279"], ["updated_at", "2020-06-14 17:17:23.464279"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 296)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "exercitationem"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "exercitationem"], ["status", 0], ["created_at", "2020-06-14 17:17:23.469944"], ["updated_at", "2020-06-14 17:17:23.469944"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Learn Elm", "status"=>"0"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Learn Elm"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Learn Elm"], ["status", 0], ["created_at", "2020-06-14 17:17:23.474845"], ["updated_at", "2020-06-14 17:17:23.474845"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "Learn Elm"], ["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1409)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "velit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "velit"], ["status", 0], ["created_at", "2020-06-14 17:17:23.479601"], ["updated_at", "2020-06-14 17:17:23.479601"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Learn Elm", "status"=>"0"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Learn Elm"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Learn Elm"], ["status", 0], ["created_at", "2020-06-14 17:17:23.483319"], ["updated_at", "2020-06-14 17:17:23.483319"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "Learn Elm"], ["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1382)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "facilis"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "facilis"], ["status", 0], ["created_at", "2020-06-14 17:17:23.497023"], ["updated_at", "2020-06-14 17:17:23.497023"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"description"=>"Foobar"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 194)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "placeat"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "placeat"], ["status", 0], ["created_at", "2020-06-14 17:17:23.502891"], ["updated_at", "2020-06-14 17:17:23.502891"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"description"=>"Foobar"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 183)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "ea"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "ea"], ["status", 0], ["created_at", "2020-06-14 17:17:23.508462"], ["updated_at", "2020-06-14 17:17:23.508462"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/13" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"13"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.2ms | Allocations: 321)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "natus"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "natus"], ["status", 0], ["created_at", "2020-06-14 17:17:23.515125"], ["updated_at", "2020-06-14 17:17:23.515125"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/14" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"14"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.2ms | Allocations: 313)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "beatae"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "beatae"], ["status", 0], ["created_at", "2020-06-14 17:17:23.520880"], ["updated_at", "2020-06-14 17:17:23.520880"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/todos/15" for 127.0.0.1 at 2020-06-14 11:17:23 -0600
+Processing by TodosController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Destroy (0.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.5ms | Allocations: 397)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "todos" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'todo_tasks_api_test'[0m
+  [1m[35m (6.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."todos" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "todos" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodo Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE "todos"."description" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "commodi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "commodi"], ["status", 0], ["created_at", "2020-06-14 17:18:18.529739"], ["updated_at", "2020-06-14 17:18:18.529739"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1728)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "excepturi"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "excepturi"], ["status", 0], ["created_at", "2020-06-14 17:18:18.541594"], ["updated_at", "2020-06-14 17:18:18.541594"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 386)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "minima"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "minima"], ["status", 0], ["created_at", "2020-06-14 17:18:18.547422"], ["updated_at", "2020-06-14 17:18:18.547422"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/3" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 585)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sint"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "sint"], ["status", 0], ["created_at", "2020-06-14 17:18:18.553817"], ["updated_at", "2020-06-14 17:18:18.553817"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/4" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 376)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "sunt"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "sunt"], ["status", 0], ["created_at", "2020-06-14 17:18:18.559696"], ["updated_at", "2020-06-14 17:18:18.559696"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 683)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "praesentium"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "praesentium"], ["status", 0], ["created_at", "2020-06-14 17:18:18.565961"], ["updated_at", "2020-06-14 17:18:18.565961"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/todos/100" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 296)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "hic"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "hic"], ["status", 0], ["created_at", "2020-06-14 17:18:18.571462"], ["updated_at", "2020-06-14 17:18:18.571462"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Learn Elm", "status"=>"0"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Learn Elm"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Learn Elm"], ["status", 0], ["created_at", "2020-06-14 17:18:18.576378"], ["updated_at", "2020-06-14 17:18:18.576378"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "Learn Elm"], ["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1409)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "accusantium"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "accusantium"], ["status", 0], ["created_at", "2020-06-14 17:18:18.580764"], ["updated_at", "2020-06-14 17:18:18.580764"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Learn Elm", "status"=>"0"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Learn Elm"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "Learn Elm"], ["status", 0], ["created_at", "2020-06-14 17:18:18.584436"], ["updated_at", "2020-06-14 17:18:18.584436"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) AND "todos"."id" != $2 LIMIT $3[0m  [["description", "Learn Elm"], ["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TodoSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 1382)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "consectetur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "consectetur"], ["status", 0], ["created_at", "2020-06-14 17:18:18.588244"], ["updated_at", "2020-06-14 17:18:18.588244"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Foobar"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Foobar"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Foobar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.04ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1648)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "suscipit"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "suscipit"], ["status", 0], ["created_at", "2020-06-14 17:18:18.595759"], ["updated_at", "2020-06-14 17:18:18.595759"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/todos" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#create as HTML
+  Parameters: {"todo"=>{"description"=>"Foobar"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Foobar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "Foobar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.04ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1593)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "tenetur"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "tenetur"], ["status", 0], ["created_at", "2020-06-14 17:18:18.602813"], ["updated_at", "2020-06-14 17:18:18.602813"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/13" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"13"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms | Allocations: 316)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "dolores"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.1ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "dolores"], ["status", 0], ["created_at", "2020-06-14 17:18:18.607787"], ["updated_at", "2020-06-14 17:18:18.607787"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/todos/14" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#update as HTML
+  Parameters: {"descriptio"=>"Shopping", "id"=>"14"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.1ms | Allocations: 313)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "todos" WHERE LOWER("todos"."description") = LOWER($1) LIMIT $2[0m  [["description", "magnam"], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("description", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["description", "magnam"], ["status", 0], ["created_at", "2020-06-14 17:18:18.613520"], ["updated_at", "2020-06-14 17:18:18.613520"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/todos/15" for 127.0.0.1 at 2020-06-14 11:18:18 -0600
+Processing by TodosController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTodo Destroy (0.1ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.3ms | Allocations: 393)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

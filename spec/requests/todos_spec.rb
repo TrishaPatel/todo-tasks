@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Todos API', type: :request do
   # initialize test data
-  let!(:todos) { create_list(:todo, 10) }
+  let!(:todos) { create_list(:todo, 1) }
   let(:todo_id) { todos.first.id }
 
   # Test suite for GET /todos
@@ -13,7 +13,7 @@ RSpec.describe 'Todos API', type: :request do
     it 'returns todos' do
       # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
-      expect(json.size).to eq(10)
+      expect(json.size).to eq(1)
     end
 
     it 'returns status code 200' do
@@ -52,7 +52,7 @@ RSpec.describe 'Todos API', type: :request do
   # Test suite for POST /todos
   describe 'POST /todos' do
     # valid payload
-    let(:valid_attributes) { { description: 'Learn Elm', status: '0' } }
+    let(:valid_attributes) { { todo:{ description: 'Learn Elm', status: '0' }} }
 
     context 'when the request is valid' do
       before { post '/todos', params: valid_attributes }
@@ -61,13 +61,13 @@ RSpec.describe 'Todos API', type: :request do
         expect(json['description']).to eq('Learn Elm')
       end
 
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
       end
     end
 
     context 'when the request is invalid' do
-      before { post '/todos', params: { description: 'Foobar' } }
+      before { post '/todos', params: { todo:{ description: 'Foobar' } } }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
