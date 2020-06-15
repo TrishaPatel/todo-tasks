@@ -1,6 +1,5 @@
 import React from "react";
-import { TextField, Grid, Button } from "@material-ui/core";
-import taskDetail from "./initialData.js";
+import { TextField, Grid } from "@material-ui/core";
 import { TaskContext } from "../../context/taskContext.js";
 import styled from "styled-components";
 
@@ -18,7 +17,7 @@ export default class UpdateTask extends React.Component {
   static contextType = TaskContext;
 
   render() {
-    const { description, error } = this.context.state;
+    const { description } = this.context.state;
     return (
       <form onSubmit={e => this.context.updateTask(e)}>
         <Container>

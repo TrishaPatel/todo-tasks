@@ -26,10 +26,6 @@ const Container = styled.div`
 export default class Task extends React.Component {
   static contextType = TaskContext;
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Draggable

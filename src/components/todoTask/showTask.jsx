@@ -30,10 +30,10 @@ export default class ShowTask extends React.Component {
     taskDetail.tasks[taskId] = taskValue;
     let taskIdIndex = taskDetail.columns[
       getValueByKey(taskStatus, taskValue.status)
-    ].taskIds.findIndex(task => task == taskValue.id);
+    ].taskIds.findIndex(task => parseInt(task) === parseInt(taskValue.id));
     // In case of Delete if id is not exists removing
     // id from columns taskids array
-    if (taskIdIndex == -1) {
+    if (taskIdIndex === -1) {
       taskDetail.columns[
         getValueByKey(taskStatus, taskValue.status)
       ].taskIds.push(taskValue.id);
@@ -41,17 +41,16 @@ export default class ShowTask extends React.Component {
     return taskDetail;
   };
   // fetch todos from rails api
-  fetchTodos = () => {
+  fetchTodos() {
     fetch("/todos")
       .then(response => response.json())
       .then(todos => {
-        let taskDetail;
-        todos.map((value, key) => {
-          taskDetail = this.createTaskObject(value);
+        let taskDetail = todos.map((value, key) => {
+          return this.createTaskObject(value);
         });
         this.setState({ ...taskDetail, isLoading: true });
       });
-  };
+  }
   addTask = event => {
     event.preventDefault();
     try {
@@ -150,7 +149,7 @@ export default class ShowTask extends React.Component {
           let errorList = Object.entries(JSON.parse(errorMessage));
           errorList.forEach(([key, value]) => {
             errorState[key] = true;
-            if (errorState["message"] == "") {
+            if (errorState["message"] === "") {
               errorState["message"] = value[0];
             }
           });
@@ -178,7 +177,7 @@ export default class ShowTask extends React.Component {
               .taskIds;
           let newTaskIds;
           newTaskIds = taskIds.filter(id => {
-            return id != taskId;
+            return id !== taskId;
           });
           delete taskDetail.tasks[taskId];
           taskDetail.columns[
@@ -193,7 +192,7 @@ export default class ShowTask extends React.Component {
             let errorList = Object.entries(JSON.parse(errorMessage));
             errorList.forEach(([key, value]) => {
               errorState[key] = true;
-              if (errorState["message"] == "") {
+              if (errorState["message"] === "") {
                 errorState["message"] = value[0];
               }
             });
@@ -292,7 +291,7 @@ export default class ShowTask extends React.Component {
             let errorList = Object.entries(JSON.parse(errorMessage));
             errorList.forEach(([key, value]) => {
               errorState[key] = true;
-              if (errorState["message"] == "") {
+              if (errorState["message"] === "") {
                 errorState["message"] = value[0];
               }
             });
@@ -302,7 +301,7 @@ export default class ShowTask extends React.Component {
     } catch (error) {}
   };
   render() {
-    const { isLoading, id, newRecord, error } = this.state;
+    const { isLoading, id, newRecord } = this.state;
     if (isLoading) {
       return (
         <TaskContext.Provider

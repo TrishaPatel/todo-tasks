@@ -1,4 +1,3 @@
-import result from "./dragEndResult.js";
 import { DragDropContext } from "react-beautiful-dnd";
 import React from "react";
 import styled from "styled-components";

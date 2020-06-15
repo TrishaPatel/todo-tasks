@@ -29,11 +29,7 @@ export default class TaskColumn extends React.Component {
           {provided => (
             <TaskList ref={provided.innerRef} {...provided.droppableProps}>
               {this.props.tasks.map((task, index) => (
-                <Task
-                  key={Math.random().toString()}
-                  index={index}
-                  task={task}
-                />
+                <Task key={task.id.toString()} index={index} task={task} />
               ))}
               {provided.placeholder}
             </TaskList>

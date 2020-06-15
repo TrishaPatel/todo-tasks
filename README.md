@@ -1,4 +1,6 @@
-Created To-do App using create-react-script
+# Todo-Task
+
+Todo-Task is a React app to create todos.
 
 ## Available Scripts
 
