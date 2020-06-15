@@ -24,12 +24,15 @@ export default class ShowTask extends React.Component {
     this.fetchTodos();
   }
   createTaskObject = taskValue => {
+    // Creating task object to assing value
     let taskId = taskValue.id.toString();
     let taskDetail = this.state.taskDetail;
     taskDetail.tasks[taskId] = taskValue;
     let taskIdIndex = taskDetail.columns[
       getValueByKey(taskStatus, taskValue.status)
     ].taskIds.findIndex(task => task == taskValue.id);
+    // In case of Delete if id is not exists removing
+    // id from columns taskids array
     if (taskIdIndex == -1) {
       taskDetail.columns[
         getValueByKey(taskStatus, taskValue.status)

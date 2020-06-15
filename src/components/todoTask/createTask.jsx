@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Grid, Button, InputLabel } from "@material-ui/core";
+import { TextField, Grid, Button } from "@material-ui/core";
 import taskDetail from "./initialData.js";
 import { TaskContext } from "../../context/taskContext.js";
 import styled from "styled-components";
