@@ -44,8 +44,12 @@ export default class ShowTask extends React.Component {
   fetchTodos() {
     try {
       fetch("/todos")
-        .then(response => response.json())
+        .then(response => {
+          console.log(response);
+          response.json();
+        })
         .then(todos => {
+          console.log(todos);
           let taskDetail = todos.map((value, key) => {
             return this.createTaskObject(value);
           });
