@@ -40,6 +40,7 @@ export default class ShowTask extends React.Component {
     }
     return taskDetail;
   };
+  // fetch todos from rails api
   fetchTodos = () => {
     fetch("/todos")
       .then(response => response.json())
@@ -70,7 +71,6 @@ export default class ShowTask extends React.Component {
         }
       })
         .then(response => {
-          console.log(response);
           if (!response.ok) {
             throw response;
           }
@@ -160,27 +160,54 @@ export default class ShowTask extends React.Component {
   };
   deleteTask = (taskId, event) => {
     event.stopPropagation();
-    fetch(`/todos/${taskId}`, { method: "delete" }).then(response => {
-      let taskDetail = this.state.taskDetail;
-      let deletedTaskStatus = taskDetail.tasks[taskId].status;
-      let taskIds =
-        taskDetail.columns[getValueByKey(taskStatus, deletedTaskStatus)]
-          .taskIds;
-      let newTaskIds;
-      newTaskIds = taskIds.filter(id => {
-        return id != taskId;
-      });
-      delete taskDetail.tasks[taskId];
-      taskDetail.columns[
-        getValueByKey(taskStatus, deletedTaskStatus)
-      ].taskIds = newTaskIds;
-      this.setState({ ...taskDetail });
-    });
+    try {
+      fetch(`/todos/${taskId}`, { method: "delete" })
+        .then(response => {
+          if (!response.ok) {
+            throw response;
+          } else {
+            return response;
+          }
+        })
+        .then(response => {
+          // Instead of calling API again deleting task from array
+          let taskDetail = this.state.taskDetail;
+          let deletedTaskStatus = taskDetail.tasks[taskId].status;
+          let taskIds =
+            taskDetail.columns[getValueByKey(taskStatus, deletedTaskStatus)]
+              .taskIds;
+          let newTaskIds;
+          newTaskIds = taskIds.filter(id => {
+            return id != taskId;
+          });
+          delete taskDetail.tasks[taskId];
+          taskDetail.columns[
+            getValueByKey(taskStatus, deletedTaskStatus)
+          ].taskIds = newTaskIds;
+          this.setState({ ...taskDetail });
+        })
+        .catch(error => {
+          let errorState = {};
+          errorState["message"] = "";
+          error.text().then(errorMessage => {
+            let errorList = Object.entries(JSON.parse(errorMessage));
+            errorList.forEach(([key, value]) => {
+              errorState[key] = true;
+              if (errorState["message"] == "") {
+                errorState["message"] = value[0];
+              }
+            });
+            this.setState({ error: errorState });
+          });
+        });
+    } catch (error) {
+      // console.log(error);
+    }
   };
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
-
+  // To move task between status
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
     if (!destination) {
@@ -276,7 +303,6 @@ export default class ShowTask extends React.Component {
   };
   render() {
     const { isLoading, id, newRecord, error } = this.state;
-    console.log(error);
     if (isLoading) {
       return (
         <TaskContext.Provider
