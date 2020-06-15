@@ -42,14 +42,18 @@ export default class ShowTask extends React.Component {
   };
   // fetch todos from rails api
   fetchTodos() {
-    fetch("/todos")
-      .then(response => response.json())
-      .then(todos => {
-        let taskDetail = todos.map((value, key) => {
-          return this.createTaskObject(value);
+    try {
+      fetch("/todos")
+        .then(response => response.json())
+        .then(todos => {
+          let taskDetail = todos.map((value, key) => {
+            return this.createTaskObject(value);
+          });
+          this.setState({ ...taskDetail, isLoading: true });
         });
-        this.setState({ ...taskDetail, isLoading: true });
-      });
+    } catch (error) {
+      console.log(error);
+    }
   }
   addTask = event => {
     event.preventDefault();
