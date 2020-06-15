@@ -2,7 +2,7 @@
   "name": "todo-tasks",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://todos-demo-app.herokuapp.com",
+  "proxy": "https://todos-demo-app.herokuapp.com",
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
