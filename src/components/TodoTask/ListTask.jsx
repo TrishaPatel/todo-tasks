@@ -2,7 +2,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import React from "react";
 import styled from "styled-components";
 import Column from "./taskColumn.jsx";
-import { TaskContext } from "../../context/taskContext.js";
+import { TaskContext } from "../../context/TaskContext.jsx";
 
 const Container = styled.div`
   display: flex;

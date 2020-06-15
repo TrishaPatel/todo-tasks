@@ -1,7 +1,7 @@
-import { TaskContext } from "../../context/taskContext.js";
-import TodoTask from "./listTask.jsx";
-import CreateTask from "./createTask.jsx";
-import UpdateTask from "./updateTask.jsx";
+import { TaskContext } from "../../context/TaskContext.jsx";
+import TodoTask from "./ListTask.jsx";
+import CreateTask from "./CreateTask.jsx";
+import UpdateTask from "./UpdateTask.jsx";
 
 import React from "react";
 import taskDetail from "./initialData.js";

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Grid from "@material-ui/core/Grid";
-import ShowTask from "./components/todoTask/showTask.jsx";
+import ShowTask from "./components/TodoTask/ShowTask.jsx";
 import styled from "styled-components";
 
 const Header = styled.div`

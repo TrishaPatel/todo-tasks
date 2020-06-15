@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
-import { TaskContext } from "../../context/taskContext.js";
+import { TaskContext } from "../../context/TaskContext.jsx";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
