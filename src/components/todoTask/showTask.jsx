@@ -45,8 +45,7 @@ export default class ShowTask extends React.Component {
     try {
       fetch("/todos")
         .then(response => {
-          console.log(response);
-          response.json();
+          return response.json();
         })
         .then(todos => {
           console.log(todos);
