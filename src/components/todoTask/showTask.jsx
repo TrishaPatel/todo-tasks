@@ -177,7 +177,7 @@ export default class ShowTask extends React.Component {
               .taskIds;
           let newTaskIds;
           newTaskIds = taskIds.filter(id => {
-            return id !== taskId;
+            return parseInt(id) !== parseInt(taskId);
           });
           delete taskDetail.tasks[taskId];
           taskDetail.columns[
